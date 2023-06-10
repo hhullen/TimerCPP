@@ -31,7 +31,7 @@ class DTime {
   int InDays();
 
   long long Ms();
-  long int Sec();
+  long long Sec();
   int Min();
   int Hours();
   int Days();
