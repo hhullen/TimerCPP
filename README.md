@@ -81,7 +81,7 @@ int main() {
   hhullen::DTime dt = timer.Elapsed();
 
   // Next few format of elapsed time possible:
-  // Methods In* returns whole time converted to one or another measure
+  // Methods In* return whole time converted to one or another measure
   // For example:
     // if 74 seconds passed
     // InMin() method returns 1
@@ -92,7 +92,7 @@ int main() {
                dt.InSec() << "." <<
                dt.InMs() << "\n";
 
-  // This methods returns values from formatted time line
+  // This methods return values from formatted time line
   // For example:
     // if 74 seconds passed
     // Min() method returns 1
@@ -103,7 +103,7 @@ int main() {
                dt.Sec() << "." <<
                dt.Ms() << "\n";
 
-  // Methodt S* returns also values from formatted time line but in string type
+  // Methods S* return also values from formatted time line but in string type
   // So, it can be concatenated to one string type variable
   std::string time = dt.SDays() + ":" +
                      dt.SHours() + ":" +
