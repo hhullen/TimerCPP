@@ -1,1 +1,118 @@
 # TimerCPP
+
+Simple one-header library for measuring time in C++ code execution. C++ Timer.
+
+## Classes definition
+```c++
+namespace hhullen {
+
+class Timer {
+ public:
+  Timer();
+
+  void Start();
+  void Stop();
+  DTime Elapsed();
+  ...
+};
+
+}
+```
+```c++
+namespace hhullen {
+
+class DTime {
+ public:
+  DTime(const long long duration);
+
+  long long InMs();
+  long long InSec();
+  int InMin();
+  int InHours();
+  int InDays();
+
+  long long Ms();
+  long int Sec();
+  int Min();
+  int Hours();
+  int Days();
+
+  std::string SMs(const unsigned char width = 3);
+  std::string SSec();
+  std::string SMin();
+  std::string SHours();
+  std::string SDays();
+  ...
+};
+
+}
+```
+
+## Installation
+It is one-header library. Just include it.
+```c++
+#include "../path_to_file/timer.h"
+```
+
+## Usage
+
+```c++
+
+#include <iostream>
+
+#include "timer.h"
+
+int main() {
+  // Create Timer object
+  hhullen::Timer timer;
+
+  // Start timer, but unnecessary because timer also starts when object created
+  timer.Start();
+
+  // Some code
+  for (unsigned int i = 4'294'000'000; i != 0; ++i) {
+    std::cout << i << "\n";
+  }
+
+  // Stop timer
+  timer.Stop();
+
+  // Get elapsed time into DTime object
+  hhullen::DTime dt = timer.Elapsed();
+
+  // Next few format of elapsed time possible:
+  // Methods In* returns whole time converted to one or another measure
+  // For example:
+    // if 74 seconds passed
+    // InMin() method returns 1
+    // and InSec() method returns 74
+  std::cout << dt.InDays() << ":" <<
+               dt.InHours() << ":" <<
+               dt.InMin() << ":" <<
+               dt.InSec() << "." <<
+               dt.InMs() << "\n";
+
+  // This methods returns values from formatted time line
+  // For example:
+    // if 74 seconds passed
+    // Min() method returns 1
+    // and Sec() method returns 14
+  std::cout << dt.Days() << ":" <<
+               dt.Hours() << ":" <<
+               dt.Min() << ":" <<
+               dt.Sec() << "." <<
+               dt.Ms() << "\n";
+
+  // Methodt S* returns also values from formatted time line but in string type
+  // So, it can be concatenated to one string type variable
+  std::string time = dt.SDays() + ":" +
+                     dt.SHours() + ":" +
+                     dt.SMin() + ":" +
+                     dt.SSec() + "." +
+                     dt.SMs();
+
+  // then output elapsed time
+  std::cout << time << "\n";
+  return 0;
+}
+```
