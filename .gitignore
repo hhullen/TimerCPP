@@ -32,5 +32,5 @@
 *.app
 
 #others
-*.DS_Strore
+*.DS_Store
 *.dSYM
