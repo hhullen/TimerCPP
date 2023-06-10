@@ -49,7 +49,7 @@ class DTime {
 ```
 
 ## Installation
-It is one-header library. Just copy `timer.h` to your project and include it.
+It is one-header library. Just copy `timer.h` from `src` directory to your project and include it.
 ```c++
 #include "../path_to_file/timer.h"
 ```
@@ -116,3 +116,4 @@ int main() {
   return 0;
 }
 ```
+To build and run an example, run command `make example` in `src` directory. Then run `make clean` to remove executable example file.
