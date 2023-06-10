@@ -24,7 +24,7 @@ class DTime {
   int InDays() { return elapsed_milliseconds_ / 86'400'000; }
 
   long long Ms() { return elapsed_milliseconds_ % 1000; }
-  long int Sec() { return elapsed_milliseconds_ % 60'000 / 1000; }
+  long long Sec() { return elapsed_milliseconds_ % 60'000 / 1000; }
   int Min() { return elapsed_milliseconds_ % 3'600'000 / 60'000; }
   int Hours() { return elapsed_milliseconds_ % 86'400'000 / 3'600'000; }
   int Days() { return InDays(); }
