@@ -49,7 +49,7 @@ class DTime {
 ```
 
 ## Installation
-It is one-header library. Just include it.
+It is one-header library. Just copy `timer.h` to your project and include it.
 ```c++
 #include "../path_to_file/timer.h"
 ```
