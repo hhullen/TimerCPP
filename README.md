@@ -10,8 +10,7 @@ class Timer {
  public:
   Timer();
 
-  void Start();
-  void Stop();
+  void Reset();
   DTime Elapsed();
   ...
 };
@@ -57,25 +56,21 @@ It is one-header library. Just copy `timer.h` from `src` directory to your proje
 ## Usage
 
 ```c++
-
 #include <iostream>
 
 #include "timer.h"
 
 int main() {
-  // Create Timer object
+  // Create Timer object. Note, timer starts at the moment
   hhullen::Timer timer;
 
-  // Start timer, but unnecessary because timer also starts when object created
-  timer.Start();
+  // Reset timer - start from 0 now
+  timer.Reset();
 
   // Some code
   for (unsigned int i = 4'294'000'000; i != 0; ++i) {
     std::cout << i << "\n";
   }
-
-  // Stop timer
-  timer.Stop();
 
   // Get elapsed time into DTime object
   hhullen::DTime dt = timer.Elapsed();

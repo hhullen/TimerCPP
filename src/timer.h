@@ -47,20 +47,19 @@ class DTime {
 
 class Timer {
  public:
-  Timer() : start_(Clock::now()), end_(Clock::now()) {}
+  Timer() : start_(Clock::now()) {}
   Timer(const Timer& other) = delete;
   Timer(const Timer&& other) = delete;
 
-  void Start() { start_ = Clock::now(); }
-  void Stop() { end_ = Clock::now(); }
+  void Reset() { start_ = Clock::now(); }
   DTime Elapsed() {
-    long long elapded = std::chrono::duration_cast<Ms>(end_ - start_).count();
+    long long elapded =
+        std::chrono::duration_cast<Ms>(Clock::now() - start_).count();
     return DTime(elapded);
   }
 
  private:
   TimePoint start_;
-  TimePoint end_;
 };
 
 }  // namespace hhullen
