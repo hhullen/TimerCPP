@@ -1,8 +1,8 @@
 EXECUTABLE=expmple.out
-
+CPP_FLAGS=-Wall -Wextra -Werror -Wpedantic -Wshadow -Wconversion -Wnull-dereference -Wsign-conversion
 
 example: clean
-	g++ -Wall -Wextra -Werror -Wpedantic --std=c++17 example.cc -o $(EXECUTABLE)
+	g++ $(CPP_FLAGS) --std=c++17 example.cc -o $(EXECUTABLE)
 	.$(SEP)$(EXECUTABLE)
 
 clean:
