@@ -12,6 +12,8 @@ class Timer {
 
   void Reset();
   DTime Elapsed();
+  long long TimepointSec();
+  long long TimepointMs();
   ...
 };
 

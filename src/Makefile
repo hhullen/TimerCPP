@@ -1,5 +1,8 @@
 EXECUTABLE=expmple.out
-CPP_FLAGS=-Wall -Wextra -Werror -Wpedantic -Wshadow -Wconversion -Wnull-dereference -Wsign-conversion
+CPP_FLAGS=-Werror -Wpedantic -Wshadow \
+		  -Wconversion -Wdangling-else -Wnull-dereference -Wsign-conversion  \
+		  --all-warnings --extra-warnings -Wdiv-by-zero -Wcomment -Wdeprecated \
+		  -Winline -Wunused-variable -Wunused-value -Wformat-security  -Wdouble-promotion
 
 example: clean
 	g++ $(CPP_FLAGS) --std=c++17 example.cc -o $(EXECUTABLE)
